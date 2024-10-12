@@ -15,7 +15,7 @@ const Header = () => {
           alignItems: 'center',
         }}
       >
-        <Box component="img" src={logo} alt="Logo" sx={{ width: '50px', mr: 2 }} />
+        <Box component="img" src={logo} alt="Logo" sx={{ width: '75px', mr: 2 }} />
         <Box
           sx={{
             display: 'flex',
@@ -38,10 +38,13 @@ const Header = () => {
                   color="inherit" 
                   sx={{ 
                     padding: '10px 15px', // Add some padding for better spacing
-                    color: isActive ? 'red' : 'white', // Active text color
-                    backgroundColor: 'transparent', // Remove background color for both active and inactive
+                    color: isActive ? '#FFFFFF' : '#FFFFFF', // Text color (white in both active and inactive cases)
+                    backgroundColor: isActive ? '#80bfff' : 'transparent', // Light blue background for active tab
+                    fontWeight: 'bold', // Make the text bold
                     '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)', // Change on hover
+                      color: '#003366', // Change text color to #003366 on hover
+                      backgroundColor: isActive ? '#80bfff' : 'rgba(255, 255, 255, 0.1)', // Keep active tab background on hover
+                      fontWeight: 'bold', // Make the text bold on hover
                     },
                   }}
                 >
