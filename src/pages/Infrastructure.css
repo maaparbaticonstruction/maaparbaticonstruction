@@ -1,0 +1,70 @@
+.container {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255); /* White background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card-like shadow */
+  }
+  
+  .heading {
+    text-align: center;
+    font-size: 34px;
+    color: rgb(33, 115, 169); /* Primary blue for heading */
+    margin-bottom: 1.5rem;
+  }
+  
+  .paragraph {
+    font-size: 16px;
+    color: rgb(33, 115, 169); /* Primary blue for text */
+    line-height: 1.6;
+  }
+  
+  .sub-heading {
+    font-size: 24px;
+    color: rgb(33, 115, 169); /* Primary blue */
+    margin-top: 20px;
+    margin-bottom: 1rem;
+  }
+  
+  .list {
+    margin-left: 1.5rem;
+    font-size: 14px;
+    color: rgb(33, 115, 169); /* Text color for list */
+    list-style-type: disc;
+  }
+  
+  .list li {
+    margin-bottom: 0.75rem;
+  }
+  
+  strong {
+    font-weight: bold;
+    color: rgb(33, 115, 169); /* Emphasized text in primary blue */
+  }
+  
+  ul {
+    padding-left: 2rem;
+  }
+  
+  /* Add spacing and highlight important sections */
+  .highlighted-section {
+    line-height: 1.6;
+    font-size: 14px;
+    color: rgb(33, 115, 169); /* Primary blue for text */
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.25rem;
+    text-indent: 0; /* No indent for the first line */
+    text-align: left; /* Align text to the left */
+
+  margin-left: 1rem; /* Indent the second line */
+  }
+  
+  .highlighted-section p {
+    font-weight: bold;
+    text-align: center;
+    text-indent: 0; /* No indent for the first line */
+    text-align: left; /* Align text to the left */
+  }
+  
