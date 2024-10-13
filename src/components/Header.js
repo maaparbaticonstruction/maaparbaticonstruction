@@ -4,7 +4,7 @@ import { AppBar, Toolbar, Box, Button, useMediaQuery, IconButton } from '@mui/ma
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../assets/MAA_PARBATI-removebg-preview.png';
 
-const Header = ({ onMenuClick }) => { // Add onMenuClick prop
+const Header = ({ onMenuClick }) => {
   const isMobile = useMediaQuery('(max-width:600px)'); // Check if screen size is mobile
 
   return (
@@ -12,12 +12,16 @@ const Header = ({ onMenuClick }) => { // Add onMenuClick prop
       <Toolbar
         sx={{
           display: 'flex',
-          justifyContent: 'space-between', // Align items across the width
+          justifyContent: 'flex-start', // Align items to the left
           alignItems: 'center',
           padding: '0 16px', // Add some padding
         }}
       >
-        <Box component="img" src={logo} alt="Logo" sx={{ width: '75px', mr: 2 }} />
+        {/* Make the logo clickable */}
+        <NavLink to="/" style={{ textDecoration: 'none' }}>
+          <Box component="img" src={logo} alt="Logo" sx={{ width: '75px', mr: 2 }} />
+        </NavLink>
+
         {isMobile && ( // Show menu icon only on mobile
           <IconButton
             edge="end"
@@ -28,7 +32,8 @@ const Header = ({ onMenuClick }) => { // Add onMenuClick prop
             <MenuIcon />
           </IconButton>
         )}
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '10px' }}>
+
+        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '10px', ml: 2 }}> {/* Add margin to the left */}
           {['/', '/services', '/about', '/contact', '/infrastructure'].map((path) => (
             <NavLink 
               key={path} 

@@ -46,7 +46,7 @@ const Infrastructure = () => {
           <List>
             <ListItem sx={{ color: colors.body.main }}>Drilling machines</ListItem>
             <ListItem sx={{ color: colors.body.main }}>
-              Shuttering material (available: <strong>20,000 sqft</strong>)
+              Shuttering material (available: <strong>10,000 sqft</strong>)
             </ListItem>
           </List>
           <Box sx={{ backgroundColor: 'lightgray', padding: 2, mt: 2 }}>

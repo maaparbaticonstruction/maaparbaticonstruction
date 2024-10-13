@@ -7,10 +7,10 @@ const Home = () => {
         <div>
             {/* Content Section */}
             <section style={{ textAlign: 'center', padding: '2rem' }}>
-                <h2 style={{ color: colors.highlight, fontSize: { xs: '1.8rem', md: '2.5rem' } }}> {/* Responsive heading size */}
+                <h2 style={{ color: colors.highlight, fontSize: { xs: '1.8rem', md: '2.5rem' } }}>
                     MAA PARBATI Construction
                 </h2>
-                <p style={{ color: colors.secondaryText, fontSize: { xs: '0.9rem', md: '1.2rem' } }}> {/* Responsive body text size */}
+                <p style={{ color: colors.secondaryText, fontSize: { xs: '0.9rem', md: '1.2rem' } }}>
                     Your trusted partner in quality construction.
                 </p>
             </section>
@@ -30,10 +30,10 @@ const Home = () => {
                     minHeight: '400px', // Ensure minimum height for mobile devices
                 }}
             >
-                <h2 style={{ color: colors.highlight, fontSize: { xs: '1.8rem', md: '2.5rem' } }}> {/* Responsive heading size */}
+                <h2 style={{ color: colors.highlight, fontSize: { xs: '1.8rem', md: '2.5rem' } }}>
                     Welcome to MAA PARBATI Construction
                 </h2>
-                <p style={{ color: colors.secondaryText, fontSize: { xs: '0.9rem', md: '1.2rem' } }}> {/* Responsive body text size */}
+                <p style={{ color: colors.secondaryText, fontSize: { xs: '0.9rem', md: '1.2rem' } }}>
                     Building your dreams with passion and precision.
                 </p>
                 <a
@@ -50,8 +50,14 @@ const Home = () => {
                         display: 'inline-block',
                         fontSize: { xs: '0.9rem', md: '1rem' }, // Responsive button text size
                     }}
-                    onMouseOver={(e) => (e.currentTarget.style.backgroundColor = colors.highlight)}
-                    onMouseOut={(e) => (e.currentTarget.style.backgroundColor = colors.buttonBg)}
+                    onMouseOver={(e) => {
+                        e.currentTarget.style.backgroundColor = '#80bfff'; // Change to the same hover color as the menu items
+                        e.currentTarget.style.color = '#FFFFFF'; // Ensure text color is white
+                    }}
+                    onMouseOut={(e) => {
+                        e.currentTarget.style.backgroundColor = colors.buttonBg; // Revert to original background color
+                        e.currentTarget.style.color = colors.buttonText; // Revert to original text color
+                    }}
                 >
                     Explore Our Services
                 </a>
