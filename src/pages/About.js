@@ -29,9 +29,26 @@ const About = () => {
   ];
 
   return (
-    <Container maxWidth="md" sx={{ py: 5, backgroundColor: colors.background, borderRadius: '10px', position: 'relative', overflow: 'hidden' }}>
+    <Container 
+      maxWidth="md" 
+      sx={{ 
+        py: 5, 
+        backgroundColor: colors.background, 
+        borderRadius: '10px', 
+        position: 'relative', 
+        overflow: 'hidden' 
+      }}
+    >
       <Box textAlign="center" mb={4}>
-        <Typography variant="h4" component="h2" gutterBottom sx={{ color: colors.heading }}>
+        <Typography 
+          variant="h4" 
+          component="h2" 
+          gutterBottom 
+          sx={{ 
+            color: colors.heading, 
+            fontSize: { xs: '1.5rem', md: '2.5rem' }, // Responsive font size
+          }}
+        >
           About MAA PARBATI Construction
         </Typography>
       </Box>
@@ -50,16 +67,26 @@ const About = () => {
               transform: 'scale(1.02)',
               boxShadow: 6,
             },
+            padding: { xs: 2, md: 3 }, // Responsive padding
           }}
         >
           <CardContent>
             <Typography 
               variant="h5" 
-              sx={{ color: colors.title }}  // Apply title color
+              sx={{ 
+                color: colors.title,
+                fontSize: { xs: '1.25rem', md: '1.75rem' }, // Responsive title size
+              }}  
             >
               {item.title}
             </Typography>
-            <Typography variant="body2" sx={{ color: colors.body }}>
+            <Typography 
+              variant="body2" 
+              sx={{ 
+                color: colors.body,
+                fontSize: { xs: '0.9rem', md: '1rem' }, // Responsive body text size
+              }}
+            >
               {item.description}
             </Typography>
           </CardContent>

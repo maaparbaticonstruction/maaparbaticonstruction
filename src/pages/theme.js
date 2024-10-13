@@ -2,7 +2,7 @@
 
 const colors = {
     primaryText: '#FFFFFF', // White for text on hero section
-    secondaryText: '#F0F0F0', // Light gray for secondary text
+    secondaryText: '#00509E', // Light gray for secondary text
     highlight: '#00509E', // Medium Blue for highlighted elements
     buttonBg: '#FFFFFF', // White for button background
     buttonText: '#00509E', // Medium Blue for button text

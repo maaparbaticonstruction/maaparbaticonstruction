@@ -1,50 +1,53 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { AppBar, Toolbar, Box, Button } from '@mui/material';
+import { AppBar, Toolbar, Box, Button, useMediaQuery, IconButton } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../assets/MAA_PARBATI-removebg-preview.png';
 
-const Header = () => {
+const Header = ({ onMenuClick }) => { // Add onMenuClick prop
+  const isMobile = useMediaQuery('(max-width:600px)'); // Check if screen size is mobile
+
   return (
     <AppBar position="static" color="primary">
       <Toolbar
         sx={{
           display: 'flex',
-          flexDirection: 'row',
-          overflowX: 'auto',
-          whiteSpace: 'nowrap',
+          justifyContent: 'space-between', // Align items across the width
           alignItems: 'center',
+          padding: '0 16px', // Add some padding
         }}
       >
         <Box component="img" src={logo} alt="Logo" sx={{ width: '75px', mr: 2 }} />
-        <Box
-          sx={{
-            display: 'flex',
-            flexGrow: 1,
-            alignItems: 'center',
-            overflowX: 'auto',
-          }}
-        >
+        {isMobile && ( // Show menu icon only on mobile
+          <IconButton
+            edge="end"
+            color="inherit"
+            aria-label="menu"
+            onClick={onMenuClick} // Handle menu button click
+          >
+            <MenuIcon />
+          </IconButton>
+        )}
+        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '10px' }}>
           {['/', '/services', '/about', '/contact', '/infrastructure'].map((path) => (
             <NavLink 
               key={path} 
               to={path} 
               style={{ textDecoration: 'none' }} 
-              isActive={(match) => {
-                return match ? true : false;
-              }}
+              isActive={(match) => match ? true : false}
             >
               {({ isActive }) => (
                 <Button 
                   color="inherit" 
                   sx={{ 
-                    padding: '10px 15px', // Add some padding for better spacing
-                    color: isActive ? '#FFFFFF' : '#FFFFFF', // Text color (white in both active and inactive cases)
-                    backgroundColor: isActive ? '#80bfff' : 'transparent', // Light blue background for active tab
-                    fontWeight: 'bold', // Make the text bold
+                    padding: '10px 15px',
+                    color: isActive ? '#FFFFFF' : '#FFFFFF',
+                    backgroundColor: isActive ? '#80bfff' : 'transparent',
+                    fontWeight: 'bold',
+                    fontFamily: 'Inter, sans-serif',
                     '&:hover': {
-                      color: '#003366', // Change text color to #003366 on hover
-                      backgroundColor: isActive ? '#80bfff' : 'rgba(255, 255, 255, 0.1)', // Keep active tab background on hover
-                      fontWeight: 'bold', // Make the text bold on hover
+                      color: '#003366',
+                      backgroundColor: isActive ? '#80bfff' : 'rgba(255, 255, 255, 0.1)',
                     },
                   }}
                 >

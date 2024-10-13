@@ -22,6 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 0 1rem; /* Added padding */
 }
 
 .App-link {
@@ -34,5 +35,12 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Responsive media queries */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 1rem; /* Adjust padding for smaller screens */
   }
 }
