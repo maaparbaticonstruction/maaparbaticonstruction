@@ -40,7 +40,7 @@ const SideNav = ({ open, onClose }) => { // Accept open and onClose props
             src={logo}
             alt="Logo"
             sx={{
-              width: '75%', // Adjust the width as needed
+              width: '60%', // Adjust the width as needed
               maxWidth: '150px', // Max width to keep it from being too large
               display: 'block', // Ensures the image takes its own line
               margin: '0 auto', // Center the logo

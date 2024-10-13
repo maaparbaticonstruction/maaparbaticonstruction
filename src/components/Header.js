@@ -12,56 +12,59 @@ const Header = ({ onMenuClick }) => {
       <Toolbar
         sx={{
           display: 'flex',
-          justifyContent: 'flex-start', // Align items to the left
+          justifyContent: isMobile ? 'space-between' : 'flex-start', // Align items based on screen size
           alignItems: 'center',
-          padding: '0 16px', // Add some padding
+          padding: '0 16px', // Add padding on both sides
         }}
       >
-        {/* Make the logo clickable */}
+        {/* Logo Section */}
         <NavLink to="/" style={{ textDecoration: 'none' }}>
           <Box component="img" src={logo} alt="Logo" sx={{ width: '75px', mr: 2 }} />
         </NavLink>
 
-        {isMobile && ( // Show menu icon only on mobile
+        {/* Desktop Navigation Links */}
+        {!isMobile && (
+          <Box sx={{ display: 'flex', gap: '10px', ml: 2 }}> {/* Ensure links start next to the logo */}
+            {['/', '/services', '/about', '/contact', '/infrastructure'].map((path) => (
+              <NavLink 
+                key={path} 
+                to={path} 
+                style={{ textDecoration: 'none' }}
+              >
+                {({ isActive }) => (
+                  <Button
+                    color="inherit"
+                    sx={{
+                      padding: '10px 15px',
+                      color: isActive ? '#FFFFFF' : '#FFFFFF',
+                      backgroundColor: isActive ? '#80bfff' : 'transparent',
+                      fontWeight: 'bold',
+                      fontFamily: 'Inter, sans-serif',
+                      '&:hover': {
+                        color: '#003366',
+                        backgroundColor: isActive ? '#80bfff' : 'rgba(255, 255, 255, 0.1)',
+                      },
+                    }}
+                  >
+                    {path === '/' ? 'Home' : path.charAt(1).toUpperCase() + path.slice(2)}
+                  </Button>
+                )}
+              </NavLink>
+            ))}
+          </Box>
+        )}
+
+        {/* Mobile Menu Icon */}
+        {isMobile && (
           <IconButton
             edge="end"
             color="inherit"
             aria-label="menu"
             onClick={onMenuClick} // Handle menu button click
           >
-            <MenuIcon />
+            <MenuIcon sx={{ fontSize: '2rem' }} /> {/* Adjust fontSize as needed */}
           </IconButton>
         )}
-
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '10px', ml: 2 }}> {/* Add margin to the left */}
-          {['/', '/services', '/about', '/contact', '/infrastructure'].map((path) => (
-            <NavLink 
-              key={path} 
-              to={path} 
-              style={{ textDecoration: 'none' }} 
-              isActive={(match) => match ? true : false}
-            >
-              {({ isActive }) => (
-                <Button 
-                  color="inherit" 
-                  sx={{ 
-                    padding: '10px 15px',
-                    color: isActive ? '#FFFFFF' : '#FFFFFF',
-                    backgroundColor: isActive ? '#80bfff' : 'transparent',
-                    fontWeight: 'bold',
-                    fontFamily: 'Inter, sans-serif',
-                    '&:hover': {
-                      color: '#003366',
-                      backgroundColor: isActive ? '#80bfff' : 'rgba(255, 255, 255, 0.1)',
-                    },
-                  }}
-                >
-                  {path === '/' ? 'Home' : path.charAt(1).toUpperCase() + path.slice(2)}
-                </Button>
-              )}
-            </NavLink>
-          ))}
-        </Box>
       </Toolbar>
     </AppBar>
   );

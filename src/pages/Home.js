@@ -31,10 +31,8 @@ const Home = () => {
                 }}
             >
                 <h2 style={{ color: colors.highlight, fontSize: { xs: '1.8rem', md: '2.5rem' } }}>
-                    Welcome to MAA PARBATI Construction
                 </h2>
                 <p style={{ color: colors.secondaryText, fontSize: { xs: '0.9rem', md: '1.2rem' } }}>
-                    Building your dreams with passion and precision.
                 </p>
                 <a
                     href="/maaparbaticonstruction/#/services"
@@ -46,7 +44,7 @@ const Home = () => {
                         textDecoration: 'none',
                         fontWeight: 'bold',
                         transition: '0.3s',
-                        marginTop: '20px',
+                        marginTop: '50px',
                         display: 'inline-block',
                         fontSize: { xs: '0.9rem', md: '1rem' }, // Responsive button text size
                     }}
